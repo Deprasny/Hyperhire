@@ -2,7 +2,7 @@
 
 A high-performance, responsive landing page built with **Next.js 14** and **Atomic Design principles**, demonstrating modern frontend best practices.
 
-![Project Banner](public/images/landing.png) (This would be a screenshot in a real repo)
+![Project Banner](public/images/docs/landing.png)
 
 ## 🚀 Project Overview
 
