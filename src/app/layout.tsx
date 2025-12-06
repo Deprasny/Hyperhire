@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Hyperhire - Foreign Remote Team',
   description: 'Hire the best foreign talent remotely.',
   icons: {
-    icon: '/images/favicon.png', // Fallback to icon.png or favicon.ico if this doesn't exist, but explicit path is better
+    icon: '/images/favicon.png',
   },
 };
 
