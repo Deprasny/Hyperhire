@@ -2,27 +2,22 @@ import { HERO_DATA, SLIDER_ITEMS } from '@/data/mock';
 import { FOOTER_SERVICES } from '@/data/services';
 import { HeroData, ServiceItem, SliderItem } from '@/types';
 
-async function fetchData<T>(type: string, fallback: T): Promise<T> {
-  try {
-    const res = await fetch(`http://localhost:3000/api/mock-data?type=${type}`, {
-      cache: 'no-store',
-    });
-    if (!res.ok) throw new Error('Failed to fetch');
-    return res.json();
-  } catch (e) {
-    console.error(`Fetch ${type} failed, using fallback data`, e);
-    return fallback;
-  }
+const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+async function getWithDelay<T>(data: T): Promise<T> {
+  // Simulate 2s delay to demonstrate loading state
+  await delay(2000);
+  return data;
 }
 
 export async function getHeroData(): Promise<HeroData> {
-  return fetchData('hero', HERO_DATA);
+  return getWithDelay(HERO_DATA);
 }
 
 export async function getSliderData(): Promise<SliderItem[]> {
-  return fetchData('slider', SLIDER_ITEMS);
+  return getWithDelay(SLIDER_ITEMS);
 }
 
 export async function getServicesData(): Promise<ServiceItem[]> {
-  return fetchData('services', FOOTER_SERVICES);
+  return getWithDelay(FOOTER_SERVICES);
 }

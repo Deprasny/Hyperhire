@@ -18,12 +18,10 @@ The goal of this project was to implement a pixel-perfect, mobile-responsive lan
 
 ## 🧠 Technical Implementation Details
 
-### 1. Simulated API Latency & Custom Loader
-
+### 1. Simulated Latency & Custom Loader
 You might notice a **2-second delay** upon initial load. This is **intentional**.
-
-- **Why?**: To demonstrate the custom "Hiring Radar" loading animation (`src/app/loading.tsx`).
-- **How**: The server-side API mock includes a `setTimeout` to mimic network latency, triggering Next.js's suspense boundary and showing the loading UI before the main content streams in.
+-   **Why?**: To demonstrate the custom "Hiring Radar" loading animation (`src/app/loading.tsx`).
+-   **How**: The server-side data fetching includes a `setTimeout` to mimic network latency, triggering Next.js's suspense boundary and showing the loading UI before the main content streams in.
 
 ### 2. Server-Side Rendering (SSR) Pattern
 
