@@ -5,6 +5,8 @@ export interface SliderItem {
   experience: string;
   avatar: string;
   flags: string[];
+  skills: string[];
+  salary?: string;
 }
 
 export interface HeroData {
@@ -17,10 +19,4 @@ export interface HeroData {
 export interface ServiceItem {
   icon: string;
   title: string;
-}
-
-export interface PageData {
-  hero: HeroData;
-  slider: SliderItem[];
-  services: ServiceItem[];
 }

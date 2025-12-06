@@ -1,14 +1,14 @@
 import Hero from '@/components/organisms/Hero';
 import Footer from '@/components/organisms/Footer';
-import { getPageData } from '@/lib/api';
+import { getHeroData, getServicesData, getSliderData } from '@/lib/api';
 
 export default async function Home() {
-  const data = await getPageData();
+  const [hero, slider, services] = await Promise.all([getHeroData(), getSliderData(), getServicesData()]);
 
   return (
     <main className="min-h-screen bg-white font-sans">
-      <Hero data={data.hero} sliderItems={data.slider} />
-      <Footer services={data.services} />
+      <Hero data={hero} sliderItems={slider} />
+      <Footer services={services} />
     </main>
   );
 }
